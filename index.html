@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online HTML editor for mobile phone</title>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<style>
+body {
+margin: 0;
+}
+#are {
+width: 100%;
+height: 90vh;
+border: none;
+resize: none;
+font-family: monospace;
+}
+#iframe1 {
+width: 100%;
+height: 90vh;
+border: none;
+background: #252525;
+color: #fff;
+}
+#menu {
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 10vh;
+background: #f1f1f1;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<textarea id="are" placeholder="Edit Here"></textarea>
+<iframe id="iframe1" style="display: none"></iframe>
+<div id="menu">
+<button onclick="sav()">Save</button>
+<button onclick="upd()">Run</button>
+<button onclick="sho()">Edit</button>
+</div>
+<script>
+if(localStorage.sav) {
+var upt = localStorage.sav;
+document.getElementById('iframe1').contentWindow.document.write(upt);
+}
+sav() {
+var get = document.getElementById("are").value;
+localStorage.sav = get;
+alert("Save Complete");
+}
+function upd() {
+var upt = document.getElementById("are").value;
+document.getElementById('iframe1').contentWindow.document.write(upt);
+document.getElementById("are").style.display = "none";
+document.getElementById("iframe1").style.display = "block";
+}
+function edit() {
+document.getElementById("iframe1").style.display = "none";
+document.getElementById("are").style.display = "block";
+}
+</script>
+</body>
+</html>
