@@ -34,6 +34,8 @@ text-align: center;
 button {
 background: #fff;
 border-radius: 0px;
+font-size: 20px;
+padding: 6px 6px;
 }
 </style>
 </head>
@@ -42,22 +44,22 @@ border-radius: 0px;
 <iframe id="iframe1" style="display: none"></iframe>
 <div id="menu">
 <button onclick="sav()">Save</button>
-<button onclick="upd()">Run</button>
-<button onclick="sho()">Edit</button>
+<button onclick="upd()">Result</button>
+<button onclick="sho()">Editor</button>
 </div>
 <script>
 if(localStorage.sav) {
 var upt = localStorage.sav;
 document.getElementById('iframe1').contentWindow.document.write(upt);
+document.getElementById("are").value = upt;
 }
 function sav() {
 var get = document.getElementById("are").value;
 localStorage.sav = get;
 alert("Save Complete");
+location.replace("https://prazma.github.io/htmleditor");
 }
 function upd() {
-var upt = document.getElementById("are").value;
-document.getElementById('iframe1').contentWindow.document.write(upt);
 document.getElementById("are").style.display = "none";
 document.getElementById("iframe1").style.display = "block";
 }
