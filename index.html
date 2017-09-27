@@ -16,6 +16,7 @@ font-size: 18px;
 background: #252525;
 color: #fff;
 font-family: monospace;
+border-radius: 0px;
 }
 #iframe1 {
 width: 100%;
@@ -29,6 +30,10 @@ width: 100%;
 height: 10vh;
 background: #f1f1f1;
 text-align: center;
+}
+button {
+background: #fff;
+border-radius: 0px;
 }
 </style>
 </head>
@@ -56,7 +61,7 @@ document.getElementById('iframe1').contentWindow.document.write(upt);
 document.getElementById("are").style.display = "none";
 document.getElementById("iframe1").style.display = "block";
 }
-function edit() {
+function sho() {
 document.getElementById("iframe1").style.display = "none";
 document.getElementById("are").style.display = "block";
 }
