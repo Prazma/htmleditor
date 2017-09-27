@@ -12,14 +12,15 @@ width: 100%;
 height: 90vh;
 border: none;
 resize: none;
+font-size: 18px;
+background: #252525;
+color: #fff;
 font-family: monospace;
 }
 #iframe1 {
 width: 100%;
 height: 90vh;
 border: none;
-background: #252525;
-color: #fff;
 }
 #menu {
 position: fixed;
@@ -44,7 +45,7 @@ if(localStorage.sav) {
 var upt = localStorage.sav;
 document.getElementById('iframe1').contentWindow.document.write(upt);
 }
-sav() {
+function sav() {
 var get = document.getElementById("are").value;
 localStorage.sav = get;
 alert("Save Complete");
